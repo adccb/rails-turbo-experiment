@@ -2,14 +2,15 @@
 
 <%= turbo_stream_from @room %>
 
+<%= link_to "← All chats", rooms_path %>
+
 <%= turbo_frame_tag "room" do %>
   <%= render @room %>
 
-  <div>
-    <%= link_to "Edit this room", edit_room_path(@room) %> |
-    <%= link_to "Back to rooms", rooms_path %>
-  </div>
+  <%= link_to "Edit this room", edit_room_path(@room) %>
 <% end %>
+
+<hr />
 
 <%= turbo_frame_tag "messages" do %>
   <%= render @room.messages %>

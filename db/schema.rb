@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_21_193357) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_23_162746) do
   create_table "messages", force: :cascade do |t|
     t.integer "room_id", null: false
     t.text "content"
@@ -23,6 +23,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_21_193357) do
     t.string "name"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "topic"
   end
 
   add_foreign_key "messages", "rooms"
